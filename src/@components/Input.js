@@ -59,17 +59,17 @@ const MyInput = (props) => {
     isTouched: false,
     isValid: props.initialValid || false,
   });
-  //   const { value, isValid } = inputState;
-  //   const { id, onInput } = props;
+  const { value, isValid } = inputState;
+  const { id, onInput } = props;
 
-  //   useEffect(() => {
-  //     onInput(id, value, isValid);
-  //   }, [id, value, isValid, onInput]);
+  useEffect(() => {
+    onInput(id, value, isValid);
+  }, [id, value, isValid, onInput]);
 
   const changeHandler = (event) => {
     dispatch({
       type: "CHANGE",
-      val: event.nativeEvent.text,
+      val: event.target.value,
       validators: props.validators,
     });
   };
@@ -121,7 +121,13 @@ const MyInput = (props) => {
         )}
       </MainContainer>
       {!inputState.isValid && inputState.isTouched && (
-        <Row noFlex center marg="6px 0">
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            margin: "6px 0",
+          }}
+        >
           <Icon type="close-red" size="9px" />
           <Text
             marg="0 0 0 10px"
@@ -132,7 +138,7 @@ const MyInput = (props) => {
           >
             {!inputState.isValid && inputState.isTouched && props.errMessage}
           </Text>
-        </Row>
+        </div>
       )}
     </div>
   );

@@ -3,8 +3,7 @@ import React, { Suspense } from "react";
 
 import Layout from "./@layouts/Layout";
 import "./App.css";
-import { Avatar, Border, Input } from "@components";
-import { VALIDATOR_EMAIL, VALIDATOR_MINLENGTH } from "@helpers/validators";
+import { Avatar } from "@components";
 
 //make pages lazy that are not going to be used frequently
 // const TermOfUse = lazy(() => import("@modules/TermOfUse"));
@@ -24,10 +23,7 @@ function App() {
               path="/"
               component={() => (
                 <div>
-                  <Border />
-                  <Input validators={[VALIDATOR_EMAIL()]} />
                   <Avatar size={60} />
-                  <Border />
                 </div>
               )}
             />
