@@ -3,6 +3,7 @@ import React from "react";
 
 import Layout from "./@layouts/Layout";
 import "./App.css";
+import Home from "@modules/Home/Home";
 import { Avatar } from "@components";
 
 function App() {
@@ -11,15 +12,7 @@ function App() {
       <div className="background"></div>
       <Router>
         <Switch>
-          <Route
-            exact
-            path="/"
-            component={() => (
-              <div>
-                <Avatar size={60} />
-              </div>
-            )}
-          />
+          <Route exact path="/" component={Home} />
           <Layout>{/* <All app Modals /> */}</Layout>
         </Switch>
       </Router>
