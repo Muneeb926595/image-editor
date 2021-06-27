@@ -4,7 +4,7 @@ import styled from "styled-components";
 import circle from "assets/icons/avatar-circle.png";
 import userPlaceholder from "assets/icons/user-placeholder.png";
 
-const baseUrl = "";
+const baseUrl = "http://localhost:3000/api/";
 
 const Wrapper = styled.div`
   width: ${(props) => props.size + "px"};
@@ -46,6 +46,7 @@ function Avatar(props) {
           style={{
             width: size - 4,
             height: size - 4,
+            objectFit: "cover",
             borderRadius: props.hasRadius ? props.hasRadius : "50%",
             textIndent: -9999,
             alignSelf: "center",
@@ -60,7 +61,6 @@ function Avatar(props) {
         />
       </Wrapper>
     );
-
   return (
     <Wrapper size={size} uri={uri || userPlaceholder} noCircle={noCircle}>
       <img
@@ -69,6 +69,7 @@ function Avatar(props) {
         style={{
           width: size - 4,
           height: size - 4,
+          objectFit: "cover",
           borderRadius: props.hasRadius ? props.hasRadius : "50%",
           textIndent: -9999,
           alignSelf: "center",
