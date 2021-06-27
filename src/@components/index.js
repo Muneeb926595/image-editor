@@ -1,10 +1,4 @@
 export { default as Avatar } from "./Avatar";
 export { default as Icon } from "./Icon";
 export { default as Clickable } from "./Clickable";
-export { default as CustomeModal } from "./CustomeModal";
 export { default as Input } from "./Input";
-export { default as Loader } from "./Loader";
-export { default as Contact } from "./Contact";
-export { default as Search } from "./Search";
-export { default as AddNewContact } from "./AddNewContact";
-export { default as NewCallAlert } from "./NewCallAlert";

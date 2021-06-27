@@ -1,15 +1,9 @@
 import { combineReducers } from "redux";
 
-import auth from "../auth/AuthReducers";
-import message from "../messages/MessagesReducer";
-import modals from "../modals/ModalsReducers";
-import search from "../search/SearchReducers";
+// import auth from "../auth/AuthReducers";
 
 const Foodbook = combineReducers({
-  auth,
-  message,
-  modals,
-  search,
+  // auth,
 });
 
 export default Foodbook;
