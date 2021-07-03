@@ -15,3 +15,14 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+::-webkit-scrollbar {
+  height: 5px;
+  background-color: #bdbdbd;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: darkslategrey;
+  border-radius: 100px;
+}

@@ -18,6 +18,7 @@ const Home = () => {
     { isVisible: false, optionName: "Saturation", sliderValue: 0.5 },
     { isVisible: false, optionName: "Hue", sliderValue: 0.0 },
     { isVisible: false, optionName: "Color", sliderValue: 0.0 },
+    { isVisible: false, optionName: "Invert", sliderValue: 0.0 },
   ]);
 
   const [openedOptions, setOpenedOptions] = useState("edit");
@@ -55,184 +56,172 @@ const Home = () => {
       optionName: "Color",
       optionIcon: "color",
     },
+    {
+      optionName: "Invert",
+      optionIcon: "invert",
+    },
   ];
 
   const filterOptions = [
     {
       optionName: "1977",
-      Contrast: 110,
-      Brightness: 110,
-      Saturate: 130,
-      Sepia: 0,
-      Grayscale: 0,
-      Invert: 0,
-      HueRotate: 0,
-      Blur: 0,
+      contrast: 110,
+      brightness: 110,
+      saturate: 130,
+      sepia: 0,
+      grayscale: 0,
+      invert: 0,
+      hueRotate: 0,
     },
     {
       optionName: "Aden",
-      Contrast: 90,
-      Brightness: 120,
-      Saturate: 85,
-      Sepia: 0,
-      Grayscale: 0,
-      Invert: 0,
-      HueRotate: 20,
-      Blur: 0,
+      contrast: 90,
+      brightness: 120,
+      saturate: 85,
+      sepia: 0,
+      grayscale: 0,
+      invert: 0,
+      hueRotate: 20,
     },
     {
       optionName: "Amaro",
-      Contrast: 90,
-      Brightness: 110,
-      Saturate: 150,
-      Sepia: 0,
-      Grayscale: 0,
-      Invert: 0,
-      HueRotate: -10,
-      Blur: 0,
+      contrast: 90,
+      brightness: 110,
+      saturate: 150,
+      sepia: 0,
+      grayscale: 0,
+      invert: 0,
+      hueRotate: -10,
     },
     {
       optionName: "Brannan",
-      Contrast: 140,
-      Brightness: 100,
-      Saturate: 100,
-      Sepia: 50,
-      Grayscale: 0,
-      Invert: 0,
-      HueRotate: 0,
-      Blur: 0,
+      contrast: 140,
+      brightness: 100,
+      saturate: 100,
+      sepia: 50,
+      grayscale: 0,
+      invert: 0,
+      hueRotate: 0,
     },
     {
       optionName: "Brooklyn",
-      Contrast: 90,
-      Brightness: 110,
-      Saturate: 100,
-      Sepia: 0,
-      Grayscale: 0,
-      Invert: 0,
-      HueRotate: 0,
-      Blur: 0,
+      contrast: 90,
+      brightness: 110,
+      saturate: 100,
+      sepia: 0,
+      grayscale: 0,
+      invert: 0,
+      hueRotate: 0,
     },
     {
       optionName: "Clarendon",
-      Contrast: 110,
-      Brightness: 110,
-      Saturate: 130,
-      Sepia: 0,
-      Grayscale: 0,
-      Invert: 0,
-      HueRotate: 0,
-      Blur: 0,
+      contrast: 110,
+      brightness: 110,
+      saturate: 130,
+      sepia: 0,
+      grayscale: 0,
+      invert: 0,
+      hueRotate: 0,
     },
     {
       optionName: "Earlybird",
-      Contrast: 90,
-      Brightness: 100,
-      Saturate: 100,
-      Sepia: 20,
-      Grayscale: 0,
-      Invert: 0,
-      HueRotate: 0,
-      Blur: 0,
+      contrast: 90,
+      brightness: 100,
+      saturate: 100,
+      sepia: 20,
+      grayscale: 0,
+      invert: 0,
+      hueRotate: 0,
     },
     {
       optionName: "Gingham",
-      Contrast: 105,
-      Brightness: 100,
-      Saturate: 100,
-      Sepia: 0,
-      Grayscale: 0,
-      Invert: 0,
-      HueRotate: 350,
-      Blur: 0,
+      contrast: 105,
+      brightness: 100,
+      saturate: 100,
+      sepia: 0,
+      grayscale: 0,
+      invert: 0,
+      hueRotate: 350,
     },
     {
       optionName: "Hudson",
-      Contrast: 90,
-      Brightness: 120,
-      Saturate: 110,
-      Sepia: 0,
-      Grayscale: 0,
-      Invert: 0,
-      HueRotate: 0,
-      Blur: 0,
+      contrast: 90,
+      brightness: 120,
+      saturate: 110,
+      sepia: 0,
+      grayscale: 0,
+      invert: 0,
+      hueRotate: 0,
     },
     {
       optionName: "Inkwell",
-      Contrast: 110,
-      Brightness: 110,
-      Saturate: 100,
-      Sepia: 30,
-      Grayscale: 100,
-      Invert: 0,
-      HueRotate: 0,
-      Blur: 0,
+      contrast: 110,
+      brightness: 110,
+      saturate: 100,
+      sepia: 30,
+      grayscale: 100,
+      invert: 0,
+      hueRotate: 0,
     },
     {
       optionName: "Lofi",
-      Contrast: 95,
-      Brightness: 95,
-      Saturate: 150,
-      Sepia: 25,
-      Grayscale: 0,
-      Invert: 0,
-      HueRotate: 0,
-      Blur: 0,
+      contrast: 95,
+      brightness: 95,
+      saturate: 150,
+      sepia: 25,
+      grayscale: 0,
+      invert: 0,
+      hueRotate: 0,
     },
     {
       optionName: "Maven",
-      Contrast: 95,
-      Brightness: 95,
-      Saturate: 150,
-      Sepia: 25,
-      Grayscale: 0,
-      Invert: 0,
-      HueRotate: 0,
-      Blur: 0,
+      contrast: 95,
+      brightness: 95,
+      saturate: 150,
+      sepia: 25,
+      grayscale: 0,
+      invert: 0,
+      hueRotate: 0,
     },
     {
       optionName: "Perpetua",
-      Contrast: 100,
-      Brightness: 100,
-      Saturate: 100,
-      Sepia: 0,
-      Grayscale: 0,
-      Invert: 0,
-      HueRotate: 0,
-      Blur: 0,
+      contrast: 100,
+      brightness: 100,
+      saturate: 100,
+      sepia: 0,
+      grayscale: 0,
+      invert: 0,
+      hueRotate: 0,
     },
     {
       optionName: "Reyes",
-      Contrast: 85,
-      Brightness: 110,
-      Saturate: 75,
-      Sepia: 22,
-      Grayscale: 0,
-      Invert: 0,
-      HueRotate: 0,
-      Blur: 0,
+      contrast: 85,
+      brightness: 110,
+      saturate: 75,
+      sepia: 22,
+      grayscale: 0,
+      invert: 0,
+      hueRotate: 0,
     },
     {
       optionName: "Stinson",
-      Contrast: 75,
-      Brightness: 115,
-      Saturate: 85,
-      Sepia: 0,
-      Grayscale: 0,
-      Invert: 0,
-      HueRotate: 0,
-      Blur: 0,
+      contrast: 75,
+      brightness: 115,
+      saturate: 85,
+      sepia: 0,
+      grayscale: 0,
+      invert: 0,
+      hueRotate: 0,
     },
     {
       optionName: "Xpro2",
-      Contrast: 100,
-      Brightness: 100,
-      Saturate: 100,
-      Sepia: 30,
-      Grayscale: 0,
-      Invert: 0,
-      HueRotate: 0,
-      Blur: 0,
+      contrast: 100,
+      brightness: 100,
+      saturate: 100,
+      sepia: 30,
+      grayscale: 0,
+      invert: 0,
+      hueRotate: 0,
     },
   ];
 
@@ -380,6 +369,48 @@ const Home = () => {
     // }
   };
 
+  const handleApplyFilter = (event) => {
+    setSliderdata([
+      { isVisible: false, optionName: "Adjust", sliderValue: 0.0 },
+      {
+        isVisible: false,
+        optionName: "Brightness",
+        sliderValue: event.brightness / 200,
+      },
+      {
+        isVisible: false,
+        optionName: "Contrast",
+        sliderValue: event.contrast / 200,
+      },
+      { isVisible: false, optionName: "Structure", sliderValue: 0.0 },
+      {
+        isVisible: false,
+        optionName: "Warmth",
+        sliderValue: event.sepia / 200,
+      },
+      {
+        isVisible: false,
+        optionName: "Saturation",
+        sliderValue: event.saturate / 200,
+      },
+      {
+        isVisible: false,
+        optionName: "Hue",
+        sliderValue: event.hueRotate / 360,
+      },
+      {
+        isVisible: false,
+        optionName: "Color",
+        sliderValue: event.grayscale / 100,
+      },
+      {
+        isVisible: false,
+        optionName: "Invert",
+        sliderValue: event.invert / 100,
+      },
+    ]);
+  };
+
   return (
     <div className="w-screen h-screen flex-col  px-16 py-12">
       <div className="flex w-full ">
@@ -417,15 +448,24 @@ const Home = () => {
                   filter: `hue-rotate(${sliderData[6].sliderValue * 360}deg)`,
                 }}
               >
-                <img
-                  className="w-2/4 h-4/4"
-                  alt="mainPic"
+                <div
+                  className="flex justify-center items-center w-full h-full"
                   style={{
-                    transform: ` rotate(${sliderData[0].sliderValue * 360}deg)`,
-                    filter: `grayscale(${sliderData[7].sliderValue * 100}%)`,
+                    filter: `invert(${sliderData[8].sliderValue * 100}%)`,
                   }}
-                  src="https://images.unsplash.com/photo-1624779942936-02e331404c01?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                />
+                >
+                  <img
+                    className="w-2/4 h-4/4"
+                    alt="mainPic"
+                    style={{
+                      transform: ` rotate(${
+                        sliderData[0].sliderValue * 360
+                      }deg)`,
+                      filter: `grayscale(${sliderData[7].sliderValue * 100}%)`,
+                    }}
+                    src="https://images.unsplash.com/photo-1624779942936-02e331404c01?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -462,9 +502,12 @@ const Home = () => {
               ))}
             </div>
           ) : (
-            <div className="flex w-3/4 justify-center mt-6 ">
+            <div className="flex w-3/4 mt-6 pb-4 overflow-scroll overflow-y-hidden ">
               {filterOptions.map((singleOption) => (
-                <FilterOption singleFilter={singleOption} />
+                <FilterOption
+                  singleFilter={singleOption}
+                  handleClick={handleApplyFilter}
+                />
               ))}
             </div>
           )}
