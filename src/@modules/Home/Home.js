@@ -1,8 +1,24 @@
 import React, { useState } from "react";
 
-import { Icon, EditorOption, Clickable, FilterOption } from "@components";
+import {
+  Icon,
+  EditorOption,
+  Clickable,
+  FilterOption,
+  Slider,
+} from "@components";
 
 const Home = () => {
+  const [sliderData, setSliderdata] = useState([
+    { isVisible: false, optionName: "Adjust", sliderValue: 0.0 },
+    { isVisible: false, optionName: "Brightness", sliderValue: 0.0 },
+    { isVisible: false, optionName: "Contrast", sliderValue: 0.0 },
+    { isVisible: false, optionName: "Structure", sliderValue: 0.0 },
+    { isVisible: false, optionName: "Warmth", sliderValue: 0.0 },
+    { isVisible: false, optionName: "Saturation", sliderValue: 0.0 },
+    { isVisible: false, optionName: "Color", sliderValue: 0.0 },
+  ]);
+
   const [openedOptions, setOpenedOptions] = useState("edit");
 
   const editOptions = [
@@ -35,6 +51,7 @@ const Home = () => {
       optionIcon: "color",
     },
   ];
+
   const filterOptions = [
     {
       optionName: "Adjust",
@@ -58,6 +75,140 @@ const Home = () => {
       optionName: "Color",
     },
   ];
+
+  const handleEditoroptionClicked = (event) => {
+    const newArr = [];
+    switch (event) {
+      case "Adjust":
+        sliderData.map((singleSlider) => {
+          if (singleSlider.optionName === event) {
+            newArr.push({
+              isVisible: true,
+              optionName: singleSlider.optionName,
+              sliderValue: singleSlider.sliderValue,
+            });
+          } else {
+            newArr.push({
+              isVisible: false,
+              optionName: singleSlider.optionName,
+              sliderValue: singleSlider.sliderValue,
+            });
+          }
+        });
+        setSliderdata(newArr);
+        break;
+      case "Brightness":
+        sliderData.map((singleSlider) => {
+          if (singleSlider.optionName === event) {
+            newArr.push({
+              isVisible: true,
+              optionName: singleSlider.optionName,
+              sliderValue: singleSlider.sliderValue,
+            });
+          } else {
+            newArr.push({
+              isVisible: false,
+              optionName: singleSlider.optionName,
+              sliderValue: singleSlider.sliderValue,
+            });
+          }
+        });
+        setSliderdata(newArr);
+        break;
+      case "Contrast":
+        sliderData.map((singleSlider) => {
+          if (singleSlider.optionName === event) {
+            newArr.push({
+              isVisible: true,
+              optionName: singleSlider.optionName,
+              sliderValue: singleSlider.sliderValue,
+            });
+          } else {
+            newArr.push({
+              isVisible: false,
+              optionName: singleSlider.optionName,
+              sliderValue: singleSlider.sliderValue,
+            });
+          }
+        });
+        setSliderdata(newArr);
+        break;
+      case "Structure":
+        sliderData.map((singleSlider) => {
+          if (singleSlider.optionName === event) {
+            newArr.push({
+              isVisible: true,
+              optionName: singleSlider.optionName,
+              sliderValue: singleSlider.sliderValue,
+            });
+          } else {
+            newArr.push({
+              isVisible: false,
+              optionName: singleSlider.optionName,
+              sliderValue: singleSlider.sliderValue,
+            });
+          }
+        });
+        setSliderdata(newArr);
+        break;
+      case "Warmth":
+        sliderData.map((singleSlider) => {
+          if (singleSlider.optionName === event) {
+            newArr.push({
+              isVisible: true,
+              optionName: singleSlider.optionName,
+              sliderValue: singleSlider.sliderValue,
+            });
+          } else {
+            newArr.push({
+              isVisible: false,
+              optionName: singleSlider.optionName,
+              sliderValue: singleSlider.sliderValue,
+            });
+          }
+        });
+        setSliderdata(newArr);
+        break;
+      case "Saturation":
+        sliderData.map((singleSlider) => {
+          if (singleSlider.optionName === event) {
+            newArr.push({
+              isVisible: true,
+              optionName: singleSlider.optionName,
+              sliderValue: singleSlider.sliderValue,
+            });
+          } else {
+            newArr.push({
+              isVisible: false,
+              optionName: singleSlider.optionName,
+              sliderValue: singleSlider.sliderValue,
+            });
+          }
+        });
+        setSliderdata(newArr);
+        break;
+      case "Color":
+        sliderData.map((singleSlider) => {
+          if (singleSlider.optionName === event) {
+            newArr.push({
+              isVisible: true,
+              optionName: singleSlider.optionName,
+              sliderValue: singleSlider.sliderValue,
+            });
+          } else {
+            newArr.push({
+              isVisible: false,
+              optionName: singleSlider.optionName,
+              sliderValue: singleSlider.sliderValue,
+            });
+          }
+        });
+        setSliderdata(newArr);
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
     <div className="w-screen h-screen flex-col  px-16 py-12">
@@ -88,6 +239,9 @@ const Home = () => {
             Filter
           </p>
         </div>
+
+        <Slider sliderData={sliderData} setSliderdata={setSliderdata} />
+
         <div className="flex w-full justify-center">
           {openedOptions === "edit" ? (
             <div className="flex w-3/4 justify-center mt-6 ">
@@ -95,6 +249,8 @@ const Home = () => {
                 <EditorOption
                   optionName={singleOption.optionName}
                   optionIcon={singleOption.optionIcon}
+                  sliderData={sliderData}
+                  handleClick={handleEditoroptionClicked}
                 />
               ))}
             </div>
