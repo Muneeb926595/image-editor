@@ -75,139 +75,149 @@ const Home = () => {
       optionName: "Color",
     },
   ];
-
+  console.log(sliderData);
   const handleEditoroptionClicked = (event) => {
-    const newArr = [];
-    switch (event) {
-      case "Adjust":
-        sliderData.map((singleSlider) => {
-          if (singleSlider.optionName === event) {
-            newArr.push({
-              isVisible: true,
-              optionName: singleSlider.optionName,
-              sliderValue: singleSlider.sliderValue,
-            });
-          } else {
-            newArr.push({
-              isVisible: false,
-              optionName: singleSlider.optionName,
-              sliderValue: singleSlider.sliderValue,
-            });
-          }
-        });
-        setSliderdata(newArr);
-        break;
-      case "Brightness":
-        sliderData.map((singleSlider) => {
-          if (singleSlider.optionName === event) {
-            newArr.push({
-              isVisible: true,
-              optionName: singleSlider.optionName,
-              sliderValue: singleSlider.sliderValue,
-            });
-          } else {
-            newArr.push({
-              isVisible: false,
-              optionName: singleSlider.optionName,
-              sliderValue: singleSlider.sliderValue,
-            });
-          }
-        });
-        setSliderdata(newArr);
-        break;
-      case "Contrast":
-        sliderData.map((singleSlider) => {
-          if (singleSlider.optionName === event) {
-            newArr.push({
-              isVisible: true,
-              optionName: singleSlider.optionName,
-              sliderValue: singleSlider.sliderValue,
-            });
-          } else {
-            newArr.push({
-              isVisible: false,
-              optionName: singleSlider.optionName,
-              sliderValue: singleSlider.sliderValue,
-            });
-          }
-        });
-        setSliderdata(newArr);
-        break;
-      case "Structure":
-        sliderData.map((singleSlider) => {
-          if (singleSlider.optionName === event) {
-            newArr.push({
-              isVisible: true,
-              optionName: singleSlider.optionName,
-              sliderValue: singleSlider.sliderValue,
-            });
-          } else {
-            newArr.push({
-              isVisible: false,
-              optionName: singleSlider.optionName,
-              sliderValue: singleSlider.sliderValue,
-            });
-          }
-        });
-        setSliderdata(newArr);
-        break;
-      case "Warmth":
-        sliderData.map((singleSlider) => {
-          if (singleSlider.optionName === event) {
-            newArr.push({
-              isVisible: true,
-              optionName: singleSlider.optionName,
-              sliderValue: singleSlider.sliderValue,
-            });
-          } else {
-            newArr.push({
-              isVisible: false,
-              optionName: singleSlider.optionName,
-              sliderValue: singleSlider.sliderValue,
-            });
-          }
-        });
-        setSliderdata(newArr);
-        break;
-      case "Saturation":
-        sliderData.map((singleSlider) => {
-          if (singleSlider.optionName === event) {
-            newArr.push({
-              isVisible: true,
-              optionName: singleSlider.optionName,
-              sliderValue: singleSlider.sliderValue,
-            });
-          } else {
-            newArr.push({
-              isVisible: false,
-              optionName: singleSlider.optionName,
-              sliderValue: singleSlider.sliderValue,
-            });
-          }
-        });
-        setSliderdata(newArr);
-        break;
-      case "Color":
-        sliderData.map((singleSlider) => {
-          if (singleSlider.optionName === event) {
-            newArr.push({
-              isVisible: true,
-              optionName: singleSlider.optionName,
-              sliderValue: singleSlider.sliderValue,
-            });
-          } else {
-            newArr.push({
-              isVisible: false,
-              optionName: singleSlider.optionName,
-              sliderValue: singleSlider.sliderValue,
-            });
-          }
-        });
-        setSliderdata(newArr);
-        break;
-      default:
-        break;
-    }
+    setSliderdata(
+      sliderData.map((el) =>
+        el.optionName === event
+          ? { ...el, isVisible: true }
+          : { ...el, isVisible: false }
+      )
+    );
+
+    //below commented code is older version which is 100x bad than the above one
+
+    // const newArr = [];
+    // switch (event) {
+    //   case "Adjust":
+    //     sliderData.map((singleSlider) => {
+    //       if (singleSlider.optionName === event) {
+    //         newArr.push({
+    //           isVisible: true,
+    //           optionName: singleSlider.optionName,
+    //           sliderValue: singleSlider.sliderValue,
+    //         });
+    //       } else {
+    //         newArr.push({
+    //           isVisible: false,
+    //           optionName: singleSlider.optionName,
+    //           sliderValue: singleSlider.sliderValue,
+    //         });
+    //       }
+    //     });
+    //     setSliderdata(newArr);
+    //     break;
+    //   case "Brightness":
+    //     sliderData.map((singleSlider) => {
+    //       if (singleSlider.optionName === event) {
+    //         newArr.push({
+    //           isVisible: true,
+    //           optionName: singleSlider.optionName,
+    //           sliderValue: singleSlider.sliderValue,
+    //         });
+    //       } else {
+    //         newArr.push({
+    //           isVisible: false,
+    //           optionName: singleSlider.optionName,
+    //           sliderValue: singleSlider.sliderValue,
+    //         });
+    //       }
+    //     });
+    //     setSliderdata(newArr);
+    //     break;
+    //   case "Contrast":
+    //     sliderData.map((singleSlider) => {
+    //       if (singleSlider.optionName === event) {
+    //         newArr.push({
+    //           isVisible: true,
+    //           optionName: singleSlider.optionName,
+    //           sliderValue: singleSlider.sliderValue,
+    //         });
+    //       } else {
+    //         newArr.push({
+    //           isVisible: false,
+    //           optionName: singleSlider.optionName,
+    //           sliderValue: singleSlider.sliderValue,
+    //         });
+    //       }
+    //     });
+    //     setSliderdata(newArr);
+    //     break;
+    //   case "Structure":
+    //     sliderData.map((singleSlider) => {
+    //       if (singleSlider.optionName === event) {
+    //         newArr.push({
+    //           isVisible: true,
+    //           optionName: singleSlider.optionName,
+    //           sliderValue: singleSlider.sliderValue,
+    //         });
+    //       } else {
+    //         newArr.push({
+    //           isVisible: false,
+    //           optionName: singleSlider.optionName,
+    //           sliderValue: singleSlider.sliderValue,
+    //         });
+    //       }
+    //     });
+    //     setSliderdata(newArr);
+    //     break;
+    //   case "Warmth":
+    //     sliderData.map((singleSlider) => {
+    //       if (singleSlider.optionName === event) {
+    //         newArr.push({
+    //           isVisible: true,
+    //           optionName: singleSlider.optionName,
+    //           sliderValue: singleSlider.sliderValue,
+    //         });
+    //       } else {
+    //         newArr.push({
+    //           isVisible: false,
+    //           optionName: singleSlider.optionName,
+    //           sliderValue: singleSlider.sliderValue,
+    //         });
+    //       }
+    //     });
+    //     setSliderdata(newArr);
+    //     break;
+    //   case "Saturation":
+    //     sliderData.map((singleSlider) => {
+    //       if (singleSlider.optionName === event) {
+    //         newArr.push({
+    //           isVisible: true,
+    //           optionName: singleSlider.optionName,
+    //           sliderValue: singleSlider.sliderValue,
+    //         });
+    //       } else {
+    //         newArr.push({
+    //           isVisible: false,
+    //           optionName: singleSlider.optionName,
+    //           sliderValue: singleSlider.sliderValue,
+    //         });
+    //       }
+    //     });
+    //     setSliderdata(newArr);
+    //     break;
+    //   case "Color":
+    //     sliderData.map((singleSlider) => {
+    //       if (singleSlider.optionName === event) {
+    //         newArr.push({
+    //           isVisible: true,
+    //           optionName: singleSlider.optionName,
+    //           sliderValue: singleSlider.sliderValue,
+    //         });
+    //       } else {
+    //         newArr.push({
+    //           isVisible: false,
+    //           optionName: singleSlider.optionName,
+    //           sliderValue: singleSlider.sliderValue,
+    //         });
+    //       }
+    //     });
+    //     setSliderdata(newArr);
+    //     break;
+    //   default:
+    //     break;
+    // }
   };
 
   return (

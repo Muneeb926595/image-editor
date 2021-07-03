@@ -12,109 +12,13 @@ const Slider = ({ sliderData, setSliderdata }) => {
   }, [sliderData]);
 
   const handelSliderValueChange = (event) => {
-    const newArr = [];
-    switch (showSlider.optionName) {
-      case "Adjust":
-        sliderData.map((singleSlider) => {
-          if (singleSlider.optionName === showSlider.optionName) {
-            newArr.push({
-              isVisible: singleSlider.isVisible,
-              optionName: singleSlider.optionName,
-              sliderValue: event.target.value,
-            });
-          } else {
-            newArr.push(singleSlider);
-          }
-        });
-        setSliderdata(newArr);
-        break;
-      case "Brightness":
-        sliderData.map((singleSlider) => {
-          if (singleSlider.optionName === showSlider.optionName) {
-            newArr.push({
-              isVisible: singleSlider.isVisible,
-              optionName: singleSlider.optionName,
-              sliderValue: event.target.value,
-            });
-          } else {
-            newArr.push(singleSlider);
-          }
-        });
-        setSliderdata(newArr);
-        break;
-      case "Contrast":
-        sliderData.map((singleSlider) => {
-          if (singleSlider.optionName === showSlider.optionName) {
-            newArr.push({
-              isVisible: singleSlider.isVisible,
-              optionName: singleSlider.optionName,
-              sliderValue: event.target.value,
-            });
-          } else {
-            newArr.push(singleSlider);
-          }
-        });
-        setSliderdata(newArr);
-        break;
-      case "Structure":
-        sliderData.map((singleSlider) => {
-          if (singleSlider.optionName === showSlider.optionName) {
-            newArr.push({
-              isVisible: singleSlider.isVisible,
-              optionName: singleSlider.optionName,
-              sliderValue: event.target.value,
-            });
-          } else {
-            newArr.push(singleSlider);
-          }
-        });
-        setSliderdata(newArr);
-        break;
-      case "Warmth":
-        sliderData.map((singleSlider) => {
-          if (singleSlider.optionName === showSlider.optionName) {
-            newArr.push({
-              isVisible: singleSlider.isVisible,
-              optionName: singleSlider.optionName,
-              sliderValue: event.target.value,
-            });
-          } else {
-            newArr.push(singleSlider);
-          }
-        });
-        setSliderdata(newArr);
-        break;
-      case "Saturation":
-        sliderData.map((singleSlider) => {
-          if (singleSlider.optionName === showSlider.optionName) {
-            newArr.push({
-              isVisible: singleSlider.isVisible,
-              optionName: singleSlider.optionName,
-              sliderValue: event.target.value,
-            });
-          } else {
-            newArr.push(singleSlider);
-          }
-        });
-        setSliderdata(newArr);
-        break;
-      case "Color":
-        sliderData.map((singleSlider) => {
-          if (singleSlider.optionName === showSlider.optionName) {
-            newArr.push({
-              isVisible: singleSlider.isVisible,
-              optionName: singleSlider.optionName,
-              sliderValue: event.target.value,
-            });
-          } else {
-            newArr.push(singleSlider);
-          }
-        });
-        setSliderdata(newArr);
-        break;
-      default:
-        break;
-    }
+    setSliderdata(
+      sliderData.map((el) =>
+        el.optionName === showSlider.optionName
+          ? { ...el, sliderValue: event.target.value }
+          : el
+      )
+    );
   };
   return (
     <>
