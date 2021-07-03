@@ -4,7 +4,6 @@ import React from "react";
 import Layout from "./@layouts/Layout";
 import "./App.css";
 import Home from "@modules/Home/Home";
-import { Avatar } from "@components";
 
 function App() {
   return (
