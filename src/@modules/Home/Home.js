@@ -11,11 +11,12 @@ import {
 const Home = () => {
   const [sliderData, setSliderdata] = useState([
     { isVisible: false, optionName: "Adjust", sliderValue: 0.0 },
-    { isVisible: false, optionName: "Brightness", sliderValue: 0.0 },
-    { isVisible: false, optionName: "Contrast", sliderValue: 0.0 },
+    { isVisible: false, optionName: "Brightness", sliderValue: 0.5 },
+    { isVisible: false, optionName: "Contrast", sliderValue: 0.5 },
     { isVisible: false, optionName: "Structure", sliderValue: 0.0 },
     { isVisible: false, optionName: "Warmth", sliderValue: 0.0 },
-    { isVisible: false, optionName: "Saturation", sliderValue: 0.0 },
+    { isVisible: false, optionName: "Saturation", sliderValue: 0.5 },
+    { isVisible: false, optionName: "Hue", sliderValue: 0.0 },
     { isVisible: false, optionName: "Color", sliderValue: 0.0 },
   ]);
 
@@ -47,6 +48,10 @@ const Home = () => {
       optionIcon: "saturation",
     },
     {
+      optionName: "Hue",
+      optionIcon: "hue",
+    },
+    {
       optionName: "Color",
       optionIcon: "color",
     },
@@ -75,7 +80,7 @@ const Home = () => {
       optionName: "Color",
     },
   ];
-  console.log(sliderData);
+
   const handleEditoroptionClicked = (event) => {
     setSliderdata(
       sliderData.map((el) =>
@@ -227,12 +232,49 @@ const Home = () => {
           <Icon type="cross" size="24px" />
         </Clickable>
       </div>
-      <div className="flex w-full h-3/4 justify-center items-center">
-        <img
-          className="w-2/4 h-4/4"
-          alt="mainPic"
-          src="https://images.unsplash.com/photo-1624779942936-02e331404c01?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-        />
+      <div
+        className="flex w-full h-3/4 justify-center items-center"
+        style={{
+          filter: `brightness(${sliderData[1].sliderValue * 200}%)`,
+        }}
+      >
+        <div
+          className="flex justify-center items-center w-full h-full"
+          style={{
+            filter: `contrast(${sliderData[2].sliderValue * 200}%)`,
+          }}
+        >
+          <div
+            className="flex justify-center items-center w-full h-full"
+            style={{
+              filter: `sepia(${sliderData[4].sliderValue * 200}%)`,
+            }}
+          >
+            <div
+              className="flex justify-center items-center w-full h-full"
+              style={{
+                filter: `saturate(${sliderData[5].sliderValue * 200}%)`,
+              }}
+            >
+              <div
+                className="flex justify-center items-center w-full h-full"
+                style={{
+                  filter: `hue-rotate(${sliderData[6].sliderValue * 360}deg)`,
+                }}
+              >
+                <img
+                  className="w-2/4 h-4/4"
+                  alt="mainPic"
+                  style={{
+                    transform: ` rotate(${sliderData[0].sliderValue * 360}deg)`,
+                    filter: `grayscale(${sliderData[7].sliderValue * 100}%)`,
+                  }}
+                  src="https://images.unsplash.com/photo-1624779942936-02e331404c01?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="h-1/4 flex-col items-center justify-center w-full ">
         <div className="flex w-full justify-center ">

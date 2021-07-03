@@ -1,4 +1,5 @@
 export const icons = {
+  hue: require("./icons/hue.png"),
   dot: require("./icons/dot.png"),
   info: require("./icons/info.png"),
   cross: require("./icons/cross.png"),
